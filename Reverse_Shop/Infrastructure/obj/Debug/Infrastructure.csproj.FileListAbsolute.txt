@@ -1,0 +1,10 @@
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\bin\Debug\Infrastructure.dll.config
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\bin\Debug\Infrastructure.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\bin\Debug\Infrastructure.pdb
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\bin\Debug\EntityFramework.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\bin\Debug\EntityFramework.xml
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\obj\Debug\Infrastructure.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\obj\Debug\Infrastructure.pdb
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\obj\Debug\Infrastructure.csprojResolveAssemblyReference.cache

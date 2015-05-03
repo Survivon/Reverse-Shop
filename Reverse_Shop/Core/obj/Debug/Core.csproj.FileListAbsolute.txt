@@ -1,0 +1,9 @@
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Debug\Core.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Debug\Core.pdb
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Debug\Infrastructure.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Debug\EntityFramework.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Debug\Infrastructure.pdb
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Debug\EntityFramework.xml
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Debug\Core.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Debug\Core.pdb
