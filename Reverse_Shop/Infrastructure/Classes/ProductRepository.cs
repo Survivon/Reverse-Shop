@@ -10,7 +10,7 @@ namespace Infrastructure
 {
     public class ProductRepository:IProductRepository
     {
-        private ReverseShopContext _dbContext = new ReverseShopContext();
+        private readonly ReverseShopContext _dbContext = new ReverseShopContext();
         public void SaveOrUpdate(Product product) 
         {
             _dbContext.Products.Add(product);

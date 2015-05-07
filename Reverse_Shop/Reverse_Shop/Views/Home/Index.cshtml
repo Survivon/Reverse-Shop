@@ -1,11 +1,28 @@
-﻿
+﻿@using Core.Model;
+@model List<Product>
+
 
 @{
-    ViewBag.Title = "Reverse Shop";
+    ViewBag.Title = "Home Page";
 }
 
-<h1>Reverse Shop</h1>
+@foreach (var item in Model)
+{
+    <h2>@item.Id</h2>
+    <h3>@item.Name</h3>
+    <h3>@item.Time.Hours : @item.Time.Minutes</h3>
+}
 
-@ViewBag.product.Id
-<br/>
-@ViewBag.product.Time.Hours : @ViewBag.product.Time.Minutes
+
+@using (Ajax.BeginForm("Search", new AjaxOptions
+{
+    UpdateTargetId = "search",
+    InsertionMode = InsertionMode.Replace
+}))
+{
+    @Html.TextBox("productName")
+    <br />
+    <input type="submit" value="Search"/>
+}
+
+    <div id="search"></div>

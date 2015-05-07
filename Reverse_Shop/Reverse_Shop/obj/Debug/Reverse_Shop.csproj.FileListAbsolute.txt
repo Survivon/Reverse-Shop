@@ -1,9 +1,7 @@
-C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\obj\Debug\Reverse_Shop.csprojResolveAssemblyReference.cache
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Reverse_Shop.dll.config
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Reverse_Shop.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Reverse_Shop.pdb
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Antlr3.Runtime.dll
-C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Core.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\EntityFramework.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\EntityFramework.SqlServer.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Microsoft.AspNet.Identity.Core.dll
@@ -32,8 +30,6 @@ C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\System.Web.WebPages.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\System.Web.WebPages.Razor.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\WebGrease.dll
-C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Infrastructure.dll
-C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Core.pdb
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\System.Web.Helpers.xml
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\System.Web.Mvc.xml
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\System.Web.Optimization.xml
@@ -60,7 +56,6 @@ C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Infrastructure.pdb
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\ru\System.Web.Helpers.resources.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\ru\System.Web.Mvc.resources.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\ru\System.Web.Optimization.resources.dll
@@ -83,5 +78,10 @@ C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\ru\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\obj\Debug\Reverse_Shop.csprojResolveAssemblyReference.cache
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\obj\Debug\Reverse_Shop.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\obj\Debug\Reverse_Shop.pdb
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Core.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Infrastructure.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Core.pdb
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Reverse_Shop\bin\Infrastructure.pdb

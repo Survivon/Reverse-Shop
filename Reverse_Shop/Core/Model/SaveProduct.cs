@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Reverse_Shop.Models
+namespace Core.Model
 {
-    public class ProductViewModel
+   public class SaveProduct
     {
         public int Id { get; set; }
 
         public int IdSaler { get; set; }
 
-        public bool IsChoose { get; set; }
+        public int? IdBuyer { get; set; }
 
         public string Name { get; set; }
 
@@ -19,10 +20,14 @@ namespace Reverse_Shop.Models
 
         public string Image { get; set; }
 
-        public decimal Coast { get; set; }
+        public decimal? Coast { get; set; }
 
-        public double Time { get; set; }
+        public int Time { get; set; }
+
+        public DateTime DateTime { get; set; }
 
         public string Category { get; set; }
+
+        public bool? Active { get; set; }
     }
 }

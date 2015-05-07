@@ -30,5 +30,7 @@ namespace Infrastructure.Model
         public DateTime DateTime { get; set; }
 
         public string Category { get; set; }
+
+        public bool? Active { get; set; }
     }
 }

@@ -1,0 +1,9 @@
+﻿@using Core.Model
+@model List<Product>
+
+@foreach (var item in Model)
+{
+    <h2>@item.Id</h2>
+    <h3>@item.Name</h3>
+    <h4>@item.Time.Hours : @item.Time.Minutes</h4>
+}

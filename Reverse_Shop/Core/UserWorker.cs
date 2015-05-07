@@ -3,28 +3,67 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Infrastructure;
-using Infrastructure.Interface;
 using Core.Model;
+using Infrastructure;
+using Infrastructure.Classes;
+using Infrastructure.Interface;
+using System.Net.Mail;
 
 namespace Core
 {
     public class UserWorker
     {
-        private IProductRepository Irepository = new ProductRepository();
+        private readonly IUserRepository _userRepository = new UserRepository();
+        #region ShowInfo
 
-        public Product AllProducts()
+        public bool CheckUser(string userHash)
         {
-            var products = Irepository.SearchProduct(1);
-            Product product = new Product();
-            product.Id = products.Id;
-            DateTime dateTime = products.DateTime.AddHours(products.Time);
-            TimeSpan timeSpan = dateTime.Subtract(DateTime.Now);
-            Time t = new Time();
-            t.Hours = timeSpan.Hours;
-            t.Minutes=timeSpan.Minutes;
-            product.Time = t;
-            return product;
+            return _userRepository.Users().FirstOrDefault(u => u.LoginHash == userHash) != null;
         }
+
+        public User UserInfo(int userId)
+        {
+            var newUser = new User();
+            var userInfo = _userRepository.SearchUser(userId);
+            if (userInfo != null)
+            {
+                newUser.Account = userInfo.Account;
+                newUser.Active = userInfo.Active;
+                newUser.Email = userInfo.Email;
+                newUser.FirstName = userInfo.FirstName;
+                newUser.Id = userInfo.Id;
+                newUser.LoginHash = userInfo.LoginHash;
+                newUser.Phone = userInfo.Phone;
+                newUser.SecondName = newUser.SecondName;
+            }
+            else newUser = null;
+            return newUser;
+        }
+
+        public bool ActivateAccount(string email)
+        {
+            var user = new Infrastructure.Model.User();
+            user.Email = email;
+           _userRepository.SaveOrUpdate(user);
+            
+            return true;
+        }
+
+        public bool ActivateAccount(User user)
+        {
+            
+        }
+
+        #endregion
+
+
+        #region SaveOrUpdate
+    
+
+        #endregion
+
+        #region Delete
+
+        #endregion
     }
 }

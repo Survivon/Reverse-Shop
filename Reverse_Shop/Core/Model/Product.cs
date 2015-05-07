@@ -8,11 +8,23 @@ namespace Core.Model
 {
     public class Product
     {
+        public Product(int id, string name,string info,string image,decimal? coast,Time time,string category)
+        {
+            this.Id = id;
+            
+            this.Name = name;
+            this.Info = info;
+            this.Image = image;
+            this.Coast = coast;
+            this.Time = time;
+            this.Category = category;
+        }
+        public Product()
+        {
+
+        }
+
         public int Id { get; set; }
-
-        public int IdSaler { get; set; }
-
-        public int? IdBuyer { get; set; }
 
         public string Name { get; set; }
 
