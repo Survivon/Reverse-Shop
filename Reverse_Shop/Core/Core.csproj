@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MailSender.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\SaveProduct.cs" />
     <Compile Include="Model\User.cs" />

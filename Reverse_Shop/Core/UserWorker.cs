@@ -42,17 +42,16 @@ namespace Core
 
         public bool ActivateAccount(string email)
         {
-            var user = new Infrastructure.Model.User();
-            user.Email = email;
-           _userRepository.SaveOrUpdate(user);
+            var user = new Infrastructure.Model.User {Email = email};
+            _userRepository.SaveOrUpdate(user);
             
             return true;
         }
 
-        public bool ActivateAccount(User user)
-        {
+        //public bool ActivateAccount(User user)
+        //{
             
-        }
+        //}
 
         #endregion
 
