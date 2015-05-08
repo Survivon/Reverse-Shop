@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="reverseshop" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Дмитрий\\Documents\\GitHub\\Reverse-Shop\\Reverse_Shop\\Reverse_Shop\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Дмитрий\\Documents\\GitHub\\Reverse-Shop\\Reverse_Shop\\Reverse_Shop\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="reverseshop/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Дмитрий\\Documents\\GitHub\\Reverse-Shop\\Reverse_Shop\\Reverse_Shop\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:ka1gkgtfn8.database.windows.net,1433;Initial Catalog=reverseA1ri9g65V;User Id=Survivon@ka1gkgtfn8;Password=Eremenko1!" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Дмитрий\\Documents\\GitHub\\Reverse-Shop\\Reverse_Shop\\Reverse_Shop\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="ReverseShopContext-Web.config Connection String" description="" value="Data Source=tcp:ka1gkgtfn8.database.windows.net,1433;Initial Catalog=reverseA1ri9g65V;User Id=Survivon@ka1gkgtfn8;Password=Eremenko1!" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Дмитрий\\Documents\\GitHub\\Reverse-Shop\\Reverse_Shop\\Reverse_Shop\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ReverseShopContext']/@connectionString" />
+  </parameter>
+</parameters>

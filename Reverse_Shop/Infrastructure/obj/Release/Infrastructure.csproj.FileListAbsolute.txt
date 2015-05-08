@@ -1,0 +1,9 @@
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\bin\Release\Infrastructure.dll.config
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\bin\Release\Infrastructure.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\bin\Release\Infrastructure.pdb
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\bin\Release\EntityFramework.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\bin\Release\EntityFramework.xml
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\obj\Release\Infrastructure.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\obj\Release\Infrastructure.pdb
