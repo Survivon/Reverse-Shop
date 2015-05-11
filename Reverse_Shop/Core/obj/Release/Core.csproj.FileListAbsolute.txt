@@ -7,3 +7,12 @@ C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Rele
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Release\Core.csprojResolveAssemblyReference.cache
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Release\Core.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Release\Core.pdb
+E:\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Core.dll
+E:\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Core.pdb
+E:\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Infrastructure.dll
+E:\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\EntityFramework.dll
+E:\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Infrastructure.pdb
+E:\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\EntityFramework.xml
+E:\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Release\Core.csprojResolveAssemblyReference.cache
+E:\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Release\Core.dll
+E:\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Release\Core.pdb
