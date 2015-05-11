@@ -8,23 +8,29 @@ using Infrastructure;
 using Infrastructure.Classes;
 using Infrastructure.Interface;
 using System.Net.Mail;
+using System.Security.Cryptography;
 
 namespace Core
 {
     public class UserWorker
     {
         private readonly IUserRepository _userRepository = new UserRepository();
+        private readonly HashWorker _hashWorker = new HashWorker();
+        private readonly IProductRepository _productRepository = new ProductRepository();
+        private readonly ProductWorker _productWorker = new ProductWorker();
+
+
         #region ShowInfo
 
-        public bool CheckUser(string userHash)
+        public bool CheckUser(string loginHash)
         {
-            return _userRepository.Users().FirstOrDefault(u => u.LoginHash == userHash) != null;
+            return _userRepository.Users().FirstOrDefault(u => u.LoginHash == loginHash) != null;
         }
 
-        public User UserInfo(int userId)
+        public User UserInfo(string loginHash)
         {
             var newUser = new User();
-            var userInfo = _userRepository.SearchUser(userId);
+            var userInfo = _userRepository.Users().FirstOrDefault(u=>u.LoginHash==loginHash);
             if (userInfo != null)
             {
                 newUser.Account = userInfo.Account;
@@ -40,28 +46,138 @@ namespace Core
             return newUser;
         }
 
-        public bool ActivateAccount(string email)
+        public List<Product> UsersListofProducts(string loginHash)
         {
-            var user = new Infrastructure.Model.User {Email = email};
-            _userRepository.SaveOrUpdate(user);
-            
-            return true;
-        }
-
-        //public bool ActivateAccount(User user)
-        //{
-            
-        //}
+            var dbListOfProduct = _productRepository.Products().Where(p =>
+            {
+                var firstOrDefault = _userRepository.Users().FirstOrDefault(u=>u.LoginHash==loginHash);
+                return firstOrDefault != null && p.IdSaler == firstOrDefault.Id;
+            });
+            var productList = new List<Product>();
+            foreach (var item in dbListOfProduct)
+            {
+                var productItem = new Product()
+                {
+                    Category = item.Category,
+                    Coast = item.Coast,
+                    Id = item.Id,
+                    Name = item.Name,
+                    Image = item.Image,
+                    Info = item.Info,
+                    Time = _productWorker.TimeValueProduct(item.Id)
+                };
+                productList.Add(productItem);
+            }
+            return productList;
+        } 
+        
 
         #endregion
 
 
         #region SaveOrUpdate
-    
+
+        private static string MailBody(string loginHash)
+        {
+            string body = string.Format("<h2>Thank you for registration on ReverseShop!</h2><br>" +
+                "<h4>To confirm registration, click on the link below:</h4><br><a href={0}{1}\">Click here!</a>",
+                "\"localhost:52714/Activate?login=", loginHash);
+            return body;
+        }
+        
+        public bool RegistrationAccount(string email)
+        {
+            var loginHash = "";
+            using (MD5 md5Hash = MD5.Create())
+            {
+                loginHash = _hashWorker.GetMd5Hash(md5Hash, email);
+            }
+            var user = new Infrastructure.Model.User { Email = email, Active = false, LoginHash = loginHash };
+            _userRepository.SaveOrUpdate(user);
+            Core.MailSender.SendMail(user.Email,"Activate Account",MailBody(user.LoginHash),null);
+            return true;
+        }
+
+        public bool RegistrationAccount(User user)
+        {
+            var loginHash = "";
+            using (MD5 md5Hash = MD5.Create())
+            {
+                loginHash = _hashWorker.GetMd5Hash(md5Hash, user.Email);
+            }
+            var newuser = new Infrastructure.Model.User
+            {
+                Email = user.Email,
+                Active = false,
+                LoginHash = loginHash,
+                FirstName = user.FirstName,
+                SecondName = user.SecondName,
+                Phone = user.Phone
+            };
+            _userRepository.SaveOrUpdate(newuser);
+            Core.MailSender.SendMail(user.Email, "Activate Account", MailBody(user.LoginHash), null);
+            return true;
+        }
+
+        public User ActivateAccount(string loginHash)
+        {
+            var dbUser = _userRepository.Users().FirstOrDefault(u => u.LoginHash == loginHash);
+            var coreUser = new User();
+            if (dbUser == null) return coreUser;
+            dbUser.Active = true;
+            _userRepository.SaveOrUpdate(dbUser);
+            coreUser = new User()
+            {
+                FirstName = dbUser.FirstName,
+                SecondName=dbUser.SecondName,
+                Id=dbUser.Id,
+                Phone=dbUser.Phone,
+                LoginHash=dbUser.LoginHash
+            };
+            return coreUser;
+        }
+
+        public bool UpdateUserInfo(User user)
+        {
+            var newUser = new Infrastructure.Model.User
+            {
+                FirstName=user.FirstName,
+                SecondName=user.SecondName,
+                Active=user.Active,
+                Email=user.Email,
+                LoginHash=user.LoginHash,
+                PasswordHash=user.PasswordHash,
+                Phone=user.Phone,
+                Role=false
+            };
+            try
+            {
+                _userRepository.SaveOrUpdate(newUser);
+                return true;
+            }
+            catch (Exception exception)
+            {
+                return false;
+            }
+        }
 
         #endregion
 
         #region Delete
+
+        public bool DeleteUser(string loginHash)
+        {
+            try
+            {
+                _userRepository.DeleteUser(_userRepository.Users().FirstOrDefault(u => u.LoginHash == loginHash));
+                return true;
+            }
+            catch (Exception exception)
+            {
+
+                return false;
+            }
+        }
 
         #endregion
     }

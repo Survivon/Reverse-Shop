@@ -36,7 +36,7 @@ namespace Core
             return productList.Count > 0 ? productList : null;
         }
 
-        private Time TimeValueProduct(int productId)
+        public Time TimeValueProduct(int productId)
         {
             Time time = new Time();
             var product = _irepository.SearchProduct(productId);
