@@ -11,6 +11,8 @@ namespace Reverse_Shop.Controllers
     public class HomeController : Controller
     {
         private readonly ProductWorker _productWorker = new ProductWorker();
+     //   private Core.ProductControllSystem _productControllSystem = new ProductControllSystem();
+       
         public ActionResult Index()
         {
             var model = _productWorker.ProductInPage(1, 20).ToList();

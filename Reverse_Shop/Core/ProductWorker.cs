@@ -159,7 +159,7 @@ namespace Core
             }
         }
 
-        public bool ProductCoast(int productId,int coastValue)
+        public bool ProductCoast(int productId,decimal coastValue)
         {
             decimal productCoast = _irepository.SearchProduct(productId).Coast ?? decimal.MaxValue;
             return productCoast>coastValue;

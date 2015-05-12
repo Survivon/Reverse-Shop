@@ -91,6 +91,7 @@
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\SaveProduct.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="ProductControllSystem.cs" />
     <Compile Include="ProductWorker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserWorker.cs" />

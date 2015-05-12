@@ -31,15 +31,15 @@ namespace Core
         }
 
         // Verify a hash against a string.
-       public static bool VerifyMd5Hash(HashAlgorithm md5Hash, string input, string hash)
-        {
-            // Hash the input.
-            string hashOfInput = GetMd5Hash(md5Hash, input);
+       //public static bool VerifyMd5Hash(HashAlgorithm md5Hash, string input, string hash)
+       // {
+       //     // Hash the input.
+       //    // string hashOfInput = GetMd5Hash(md5Hash, input);
 
-            // Create a StringComparer an compare the hashes.
-            StringComparer comparer = StringComparer.OrdinalIgnoreCase;
+       //     // Create a StringComparer an compare the hashes.
+       //     StringComparer comparer = StringComparer.OrdinalIgnoreCase;
 
-            return 0 == comparer.Compare(hashOfInput, hash);
-        }
+       //    // return 0 == comparer.Compare(hashOfInput, hash);
+       // }
     }
 }
