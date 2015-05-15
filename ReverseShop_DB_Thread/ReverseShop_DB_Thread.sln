@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseShop_DB_Thread", "ReverseShop_DB_Thread\ReverseShop_DB_Thread.csproj", "{EFD924B5-8FAC-4F49-9D33-59B19C92E690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{87603283-F7BF-488B-B387-61C7FC19AC73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFD924B5-8FAC-4F49-9D33-59B19C92E690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFD924B5-8FAC-4F49-9D33-59B19C92E690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFD924B5-8FAC-4F49-9D33-59B19C92E690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFD924B5-8FAC-4F49-9D33-59B19C92E690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87603283-F7BF-488B-B387-61C7FC19AC73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87603283-F7BF-488B-B387-61C7FC19AC73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87603283-F7BF-488B-B387-61C7FC19AC73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87603283-F7BF-488B-B387-61C7FC19AC73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
