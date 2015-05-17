@@ -1,6 +1,7 @@
-﻿@using Core.Model
+﻿@using Core.Model;
 @model List<Product>
 
+<div class="containerindex">
     <section>
         <ul id="da-thumbs" class="da-thumbs">
             @foreach (var item in Model)
@@ -24,7 +25,7 @@
             }
         </ul>
     </section>
-
+</div>
 <script type="text/javascript">
     $(function () {
 
@@ -35,3 +36,5 @@
 
     });
 </script>
+
+

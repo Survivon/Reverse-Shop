@@ -1,9 +1,37 @@
 ﻿@using Core.Model
 @model List<Product>
 
-@foreach (var item in Model)
-{
-    <h2>@item.Id</h2>
-    <h3>@item.Name</h3>
-    <h4>@item.Time.Hours : @item.Time.Minutes</h4>
-}
+    <section>
+        <ul id="da-thumbs" class="da-thumbs">
+            @foreach (var item in Model)
+            {
+                <li>
+                    <a href="" target="_blank">
+                        @if (item.Image != null)
+                        {
+                            <img width="200" height="200" src="@item.Image" />
+                        }
+                        @if (item.Image == null)
+                        {
+                            <img width="200" src="~/Content/Image/default_image.png" />
+                        }
+                        <div>
+                            <span>@item.Name</span>
+                            @item.Info
+                        </div>
+                    </a>
+                </li>
+            }
+        </ul>
+    </section>
+
+<script type="text/javascript">
+    $(function () {
+
+        $("#da-thumbs > li").hoverdir({
+            hoverDelay: 150
+
+        });
+
+    });
+</script>

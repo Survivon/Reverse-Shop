@@ -26,6 +26,12 @@ namespace Reverse_Shop.Controllers
             if (!Request.IsAjaxRequest()) return View(product);
             return PartialView(product);
         }
-       
+
+        public ActionResult Page(int page)
+        {
+            var model = _productWorker.ProductInPage(page, 3).ToList();
+            ViewBag.List = model;
+            return PartialView(model);
+        }
     }
 }

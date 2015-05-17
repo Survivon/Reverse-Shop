@@ -13,7 +13,32 @@
             src="@Url.Content(
                      "~/scripts/jquery.unobtrusive-ajax.js")">
 
+    
     </script>
+    <link href="http://fonts.googleapis.com/css?family=Alegreya+SC:700,400italic" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/demo.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.hoverdir.js"></script>
+    <noscript>
+        <style>
+            .da-thumbs li a div {
+                top: 0px;
+                left: -100%;
+                -webkit-transition: all 0.3s ease;
+                -moz-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
+                -ms-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .da-thumbs li a:hover div {
+                left: 0px;
+            }
+        </style>
+    </noscript>
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -24,14 +49,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Имя приложения", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Reverse Shop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
-                    <li>@Html.ActionLink("О программе", "About", "Home")</li>
-                    <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
-                </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

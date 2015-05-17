@@ -1,28 +1,67 @@
 ﻿@using Core.Model;
 @model List<Product>
 
+<script type="text/javascript">
+    $(function () {
+
+        $("#da-thumbs > li").hoverdir({
+            hoverDelay: 150
+
+        });
+
+    });
+</script>
 
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Reverse Shop";
 }
-
-@foreach (var item in Model)
-{
-    <h2>@item.Id</h2>
-    <h3>@item.Name</h3>
-    <h3>@item.Time.Hours : @item.Time.Minutes</h3>
-}
-
 
 @using (Ajax.BeginForm("Search", new AjaxOptions
 {
-    UpdateTargetId = "search",
+    UpdateTargetId = "containerindex",
     InsertionMode = InsertionMode.Replace
 }))
 {
-    @Html.TextBox("productName")
-    <br />
-    <input type="submit" value="Search"/>
+   
+        @Html.TextBox("productName","",new{placeholder="Write search text here..."})
+        <span><input type="submit" value="Search" id="searchbutton" /></span>
+    
+
 }
 
-    <div id="search"></div>
+<div id="search"></div>
+
+<div class="containerindex" id="containerindex">
+    <section>
+        <ul id="da-thumbs" class="da-thumbs">
+            @foreach (var item in Model)
+            {
+                <li>
+                    <a href="" target="_blank">
+                        @if (item.Image != null)
+                        {
+                            <img width="200" height="200" src="@item.Image" />
+                        }
+                        @if (item.Image == null)
+                        {
+                            <img width="200" src="~/Content/Image/default_image.png" />
+                        }
+                        <div>
+                            <span>@item.Name</span>
+                            @item.Info
+                        </div>
+                    </a>
+                </li>
+            }
+        </ul>
+    </section>
+</div>
+
+@Ajax.ActionLink("1","Page",new{page=1}, new AjaxOptions
+{
+    UpdateTargetId = "containerindex",
+    InsertionMode = InsertionMode.Replace
+})
+
+
+
