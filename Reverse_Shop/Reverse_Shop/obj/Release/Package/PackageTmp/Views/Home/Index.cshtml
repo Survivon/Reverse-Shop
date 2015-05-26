@@ -37,7 +37,7 @@
             @foreach (var item in Model)
             {
                 <li>
-                    <a href="" target="_blank">
+                    <a href="@item.Name">
                         @if (item.Image != null)
                         {
                             <img width="200" height="200" src="@item.Image" />
@@ -48,20 +48,49 @@
                         }
                         <div>
                             <span>@item.Name</span>
-                            @item.Info
+                            <p class="indoinput">@item.Info</p>
                         </div>
                     </a>
                 </li>
             }
         </ul>
     </section>
+    @{ List<object> pageCounter = ViewBag.pageCounter;}
+    <div class="jogger">
+        <span>
+            @Ajax.ActionLink("<", "Page", new {page = 1}, new AjaxOptions
+            {
+                UpdateTargetId = "containerindex",
+                InsertionMode = InsertionMode.Replace
+            })
+        </span>
+        @foreach (var item in pageCounter)
+        {
+            if ( item == "..."||item=="..,")
+            {
+                <span>...</span>
+            }
+            else
+            {
+                <span>
+            @Ajax.ActionLink(item.ToString(), "Page", new {page = item}, new AjaxOptions
+            {
+                UpdateTargetId = "containerindex",
+                InsertionMode = InsertionMode.Replace
+            })
+        </span>
+            }
+        }
+        <span>
+            @Ajax.ActionLink(">", "Page", new { page = ViewBag.count }, new AjaxOptions
+        {
+            UpdateTargetId = "containerindex",
+            InsertionMode = InsertionMode.Replace
+        })
+        </span>
+    </div>
 </div>
 
-@Ajax.ActionLink("1","Page",new{page=1}, new AjaxOptions
-{
-    UpdateTargetId = "containerindex",
-    InsertionMode = InsertionMode.Replace
-})
 
 
 

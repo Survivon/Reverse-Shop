@@ -1,0 +1,31 @@
+﻿@using Core.Model;
+@model Product
+@{
+    ViewBag.Title = Model.Name;
+}
+
+
+<div class="productdiv">
+    <table>
+        <tr>
+            <td id="image">
+                @if (Model.Image != null)
+                {
+                    <img width="200" height="200" src="@Model.Image" />
+                }
+                @if (Model.Image == null)
+                {
+                    <img width="200" src="~/Content/Image/default_image.png" />
+                }
+            </td>
+            <td id="info">
+                <h1>@Model.Name</h1>
+
+            </td>
+        </tr>
+    </table>
+    <div>
+        <h2>Info</h2>
+        <p>@Model.Info</p>
+    </div>
+</div>

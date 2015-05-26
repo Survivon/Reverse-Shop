@@ -23,17 +23,30 @@ namespace Core
             var sortedList = from item in allProducts orderby item.DateTime descending, item select item;
             int maxCounterInItem = pageNumber*countProductInPage;
             int counterInItem = maxCounterInItem - countProductInPage;
+            int count = 0;
             foreach (var item in sortedList)
             {
                 if (counterInItem == maxCounterInItem)
                     break;
-                Product newProduct = new Product(item.Id, item.Name, item.Info, item.Image, item.Coast,
-                    TimeValueProduct(item.Id),
-                    item.Category);
-                productList.Add(newProduct);
-                counterInItem++;
+                if (count < counterInItem)
+                {
+                }
+                else
+                {
+                    Product newProduct = new Product(item.Id, item.Name, item.Info, item.Image, item.Coast,
+                        TimeValueProduct(item.Id),
+                        item.Category);
+                    productList.Add(newProduct);
+                    counterInItem++;
+                }
+                count++;
             }
             return productList.Count > 0 ? productList : null;
+        }
+
+        public int PageOfProductCount(int itemInPage)
+        {
+            return _irepository.Products().Count()>itemInPage? (int)Math.Ceiling((double)_irepository.Products().Count()/itemInPage):1;
         }
 
         public Time TimeValueProduct(int productId)
@@ -50,6 +63,24 @@ namespace Core
         public Product ProductInfo(int idProduct)
         {
             var productInDataBase = _irepository.SearchProduct(idProduct);
+            Product thisProduct = new Product();
+            if (productInDataBase != null)
+            {
+                thisProduct = new Product(
+                    productInDataBase.Id,
+                    productInDataBase.Name,
+                    productInDataBase.Info,
+                    productInDataBase.Image,
+                    productInDataBase.Coast,
+                    TimeValueProduct(productInDataBase.Id),
+                    productInDataBase.Category);
+            }
+            return thisProduct;
+        }
+
+        public Product ProductInfo(string productName)
+        {
+            var productInDataBase = _irepository.Products().FirstOrDefault(p => p.Name.Trim(' ') == productName);
             Product thisProduct = new Product();
             if (productInDataBase != null)
             {
