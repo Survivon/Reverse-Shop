@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,15 @@ namespace Infrastructure
     public class ProductRepository:IProductRepository
     {
         private readonly ReverseShopContext _dbContext = new ReverseShopContext();
-        public void SaveOrUpdate(Product product) 
+        public void Save(Product product) 
         {
             _dbContext.Products.Add(product);
+            _dbContext.SaveChanges();
+        }
+
+        public void Update(Product product)
+        {
+            _dbContext.Entry(product).State = EntityState.Modified;
             _dbContext.SaveChanges();
         }
 

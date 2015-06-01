@@ -28,4 +28,24 @@
         <h2>Info</h2>
         <p>@Model.Info</p>
     </div>
+    @if (ViewBag.Check != null)
+    {
+        if (ViewBag.Check)
+        {
+            <div>
+                <h3>You bought this goods!</h3>
+            </div>
+        }
+        else
+        {
+            <div>
+                <h2 style="color: red;">Enter smaller coast!</h2>
+            </div>
+            @Html.Action("CoastPartialView", "Product", new {productId = Model.Id})
+        }
+    }
+    else
+    {
+        @Html.Action("CoastPartialView", "Product", new { productId = Model.Id })
+    }
 </div>

@@ -1,0 +1,10 @@
+﻿@using Reverse_Shop.Models;
+@model CoastModel
+<hr/>
+<form action ="@Url.Action("NewProductCoast", "Product")" method="POST">
+    <input type="hidden" value="@ViewBag.Id" name="productId" />
+    @Html.LabelFor(c => c.Coast)
+    @Html.TextBoxFor(c => c.Coast)
+    <input type="submit" value="Buy" />
+</form>
+<hr />

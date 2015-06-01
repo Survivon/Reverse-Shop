@@ -9,7 +9,9 @@ namespace Infrastructure.Interface
 {
     public interface IProductRepository
     {
-        void SaveOrUpdate(Product product);
+        void Save(Product product);
+
+        void Update(Product product);
 
         Product SearchProduct(int id);
 

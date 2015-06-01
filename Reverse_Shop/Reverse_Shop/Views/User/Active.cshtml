@@ -1,5 +1,5 @@
-﻿@using Core.Model;
-@model User
+﻿@using Reverse_Shop.Models
+@model PasswordModel
 @{
     ViewBag.Title = "Active";
 }
@@ -10,7 +10,10 @@
 <form action="@Url.Action("Save", "User")" method="POST">
     <fieldset>
         <div>
-            @Html.LabelFor(u=>u.PasswordHash)
+            @Html.LabelForModel()
+        </div>
+        <div>
+            <input type="submit" value="Save"/>
         </div>
     </fieldset>
 </form>

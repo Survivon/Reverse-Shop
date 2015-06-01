@@ -1,0 +1,26 @@
+﻿@using Core.Model;
+@model List<Product>
+           
+<table class="simple-little-table" cellspacing='0'>
+    <tr>
+        <th>Name </th>
+        <th>Curent Coast</th>
+        <th>Info</th>
+        <th>Time to end</th>
+        <th>Category</th>
+    </tr><!-- Table Header -->
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Coast</td>
+                <td>@item.Info</td>
+                <td>@item.Time.Hours:@item.Time.Minutes</td>
+                <td>@item.Category</td>
+            </tr>
+            <!-- Table Row -->
+        }
+    }
+    </table>

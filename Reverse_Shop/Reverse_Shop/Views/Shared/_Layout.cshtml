@@ -7,14 +7,18 @@
     <title>@ViewBag.Title – приложение ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    
+
+   
     <script src="~/Scripts/jquery-1.10.2.js"></script>
     <script type="text/javascript"
             src="@Url.Content(
                      "~/scripts/jquery.unobtrusive-ajax.js")">
 
+
     
     </script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Alegreya+SC:700,400italic" rel="stylesheet" type="text/css" />
     <link href="~/Content/Site.css" rel="stylesheet" />
     <link href="~/Content/style.css" rel="stylesheet" />
@@ -56,13 +60,16 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
-        </footer>
-    </div>
+<div class="container body-content">
+    <div id="login">
+            @Html.Action("LogInView","User")
+        </div>
+    @RenderBody()
+    <hr/>
+    <footer>
+        <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
+    </footer>
+</div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

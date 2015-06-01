@@ -1,0 +1,49 @@
+﻿@using Core.Model;
+@model User
+           @if (ViewBag.Check!=null)
+           {
+               if (ViewBag.Check)
+               {
+                   <div>
+                       <h3>Changes Save!</h3>
+                   </div>
+               }
+               else
+               {
+                <div>
+                    <h3>Changes doesn't Save!</h3>
+                </div>
+               }
+           }
+@using (Html.BeginForm("UpdateUser", "User"))
+{
+    <div>
+        <span>
+            @Html.LabelFor(u => u.FirstName) : @Model.FirstName
+    </span> 
+        @Html.TextBoxFor(u => u.FirstName)
+    </div>
+    <div>
+        <span>
+            @Html.LabelFor(u => u.SecondName) : @Model.SecondName
+        </span>
+        @Html.TextBoxFor(u => u.SecondName)
+</div>
+    <div>
+        <span>Email : </span><span>@Model.Email </span>
+</div>
+    <div>
+        <span>
+            @Html.LabelFor(u => u.Phone) : @Model.Phone
+            </span>
+                @Html.TextBoxFor(u => u.Phone)
+</div>
+    <div>
+        @Html.Label("Change Password")
+        <a href="#" onclick=" document.getElementById('password').style.display = 'block'; return false; ">Change</a>
+        <div id="password">
+            @Html.Action("ChangePasswordView", "User")
+        </div>
+    </div>
+    <input type="submit" value="Save"/>
+}

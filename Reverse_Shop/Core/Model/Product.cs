@@ -8,7 +8,7 @@ namespace Core.Model
 {
     public class Product
     {
-        public Product(int id, string name,string info,string image,decimal? coast,Time time,string category)
+        public Product(int id, string name,string info,string image,decimal? coast,Time time,string category,int? buyerId)
         {
             this.Id = id;
             
@@ -18,6 +18,7 @@ namespace Core.Model
             this.Coast = coast;
             this.Time = time;
             this.Category = category;
+            this.BuyerId = buyerId;
         }
         public Product()
         {
@@ -27,6 +28,8 @@ namespace Core.Model
         public int Id { get; set; }
 
         public string Name { get; set; }
+
+        public int? BuyerId { get; set; }
 
         public string Info { get; set; }
 

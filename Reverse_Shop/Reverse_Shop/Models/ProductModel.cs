@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Reverse_Shop.Models
 {
@@ -17,10 +18,10 @@ namespace Reverse_Shop.Models
 
         public string Image { get; set; }
 
+        
         public decimal? Coast { get; set; }
 
         [Required]
-        
         public int Time { get; set; }
 
         [Required]

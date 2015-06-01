@@ -13,6 +13,9 @@ namespace Reverse_Shop.Models
         public string Password { get; set; }
 
         [Required]
-        [DataType()]
+        [DataType(DataType.Password)]
+        [Compare("Password", ErrorMessage = "Пароль и его подтверждение не совпадают.")]
+        [Display(Name = "Confirm Password")]
+        public string ConfirmPassword { get; set; }
     }
 }

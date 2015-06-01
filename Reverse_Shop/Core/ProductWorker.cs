@@ -13,6 +13,7 @@ namespace Core
     public class ProductWorker
     {
         private readonly IProductRepository _irepository = new ProductRepository();
+        private readonly UserWorker _userWorker = new UserWorker();
 
         #region ShowInfo
 
@@ -35,7 +36,7 @@ namespace Core
                 {
                     Product newProduct = new Product(item.Id, item.Name, item.Info, item.Image, item.Coast,
                         TimeValueProduct(item.Id),
-                        item.Category);
+                        item.Category,item.IdBuyer);
                     productList.Add(newProduct);
                     counterInItem++;
                 }
@@ -73,7 +74,8 @@ namespace Core
                     productInDataBase.Image,
                     productInDataBase.Coast,
                     TimeValueProduct(productInDataBase.Id),
-                    productInDataBase.Category);
+                    productInDataBase.Category,
+                     productInDataBase.IdBuyer);
             }
             return thisProduct;
         }
@@ -91,7 +93,8 @@ namespace Core
                     productInDataBase.Image,
                     productInDataBase.Coast,
                     TimeValueProduct(productInDataBase.Id),
-                    productInDataBase.Category);
+                    productInDataBase.Category,
+                    productInDataBase.IdBuyer);
             }
             return thisProduct;
         }
@@ -106,7 +109,7 @@ namespace Core
                 {
                     Product newProduct = new Product(item.Id, item.Name, item.Info, item.Image, item.Coast,
                         TimeValueProduct(item.Id),
-                        item.Category);
+                        item.Category,item.IdBuyer);
                     productList.Add(newProduct);
                 }
             }
@@ -122,10 +125,25 @@ namespace Core
                     item.Name, item.Info,
                     item.Image, item.Coast,
                     TimeValueProduct(item.Id),
-                    item.Category))
+                    item.Category,
+                    item.IdBuyer))
                 .ToList();
             return productList.Count > 0 ? productList : null;
         }
+
+        //public List<Product> UsersProductsList(string loginHash)
+        //{
+        //    int userId = _userWorker.UserInfo(loginHash).Id;
+        //    var productList = _irepository.Products().Where(p => p.IdBuyer == userId).ToList();
+        //    return productList.Select(item => new Product(item.Id, item.Name, item.Info, item.Image, item.Coast, TimeValueProduct(item.Id), item.Category, item.IdBuyer)).ToList();
+        //}
+
+        //public List<Product> UsersSaleProductsList(string loginHash)
+        //{
+        //    int userId = _userWorker.UserInfo(loginHash).Id;
+        //    var productList = _irepository.Products().Where(p => p.IdSaler == userId).ToList();
+        //    return productList.Select(item => new Product(item.Id, item.Name, item.Info, item.Image, item.Coast, TimeValueProduct(item.Id), item.Category, item.IdBuyer)).ToList();
+        //} 
 
         #endregion
 
@@ -146,7 +164,7 @@ namespace Core
             };
             try
             {
-                _irepository.SaveOrUpdate(newProduct);
+                _irepository.Save(newProduct);
                 return true;
             }
             catch (Exception e)
@@ -166,7 +184,7 @@ namespace Core
                 changeProduct.Category = product.Category;
             try
             {
-                _irepository.SaveOrUpdate(changeProduct);
+                _irepository.Update(changeProduct);
                 return true;
             }
             catch (Exception exception)
@@ -181,7 +199,7 @@ namespace Core
             {
                 var activeteProduct = _irepository.SearchProduct(productId);
                 activeteProduct.Active = mode;
-                _irepository.SaveOrUpdate(activeteProduct);
+                _irepository.Update(activeteProduct);
                 return true;
             }
             catch (Exception exception)
@@ -203,7 +221,7 @@ namespace Core
             product.Coast = productCoast;
             try
             {
-                _irepository.SaveOrUpdate(product);
+                _irepository.Update(product);
                 return true;
             }
             catch (Exception e)

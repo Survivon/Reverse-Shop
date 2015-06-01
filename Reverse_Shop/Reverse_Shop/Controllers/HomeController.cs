@@ -16,10 +16,10 @@ namespace Reverse_Shop.Controllers
         public ActionResult Index()
         {
 
-            HttpCookie newCookie = new HttpCookie("login");
-            newCookie.Value = "";
-            newCookie.Expires = DateTime.Now.AddDays(7);
-
+            //HttpCookie newCookie = new HttpCookie("login");
+            //newCookie.Value = "7b605a2452612c87d6820fa24f5c82ed";
+            //newCookie.Expires = DateTime.Now.AddDays(7);
+            //Response.Cookies.Add(newCookie);
             var model = _productWorker.ProductInPage(1, _itemInPage).ToList();
             ViewBag.List = model;
             int count = _productWorker.PageOfProductCount(_itemInPage);

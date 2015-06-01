@@ -9,7 +9,9 @@ namespace Infrastructure.Interface
 {
     public interface IUserRepository
     {
-        void SaveOrUpdate(User user);
+        void Save(User user);
+
+        void Update(User user);
 
         User SearchUser(int id);
 

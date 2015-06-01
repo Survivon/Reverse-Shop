@@ -22,9 +22,22 @@ namespace Core
 
         #region ShowInfo
 
-        public bool CheckUser(string loginHash)
+        public bool CheckUser(string loginHash,string passwordHash)
         {
-            return _userRepository.Users().FirstOrDefault(u => u.LoginHash == loginHash) != null;
+            using (MD5 md5Hash = MD5.Create())
+            {
+                loginHash = _hashWorker.GetMd5Hash(md5Hash, loginHash);
+                passwordHash = _hashWorker.GetMd5Hash(md5Hash, passwordHash);
+            }
+            return _userRepository.Users().FirstOrDefault(u => u.LoginHash == loginHash&& u.PasswordHash==passwordHash) != null;
+        }
+
+        public User AutorizationUser(string email)
+        {
+            var user = new User();
+            var dbUser = _userRepository.Users().FirstOrDefault(u => u.Email == email);
+            if (dbUser != null) user.LoginHash = dbUser.LoginHash;
+            return user;
         }
 
         public User UserInfo(string loginHash)
@@ -101,7 +114,7 @@ namespace Core
                 FirstName="",
                 SecondName="",
                 Phone=0 };
-            _userRepository.SaveOrUpdate(user);
+            _userRepository.Save(user);
             //Core.MailSender.SendMail(user.Email,"Activate Account",MailBody(user.LoginHash),null);
             return true;
         }
@@ -124,7 +137,7 @@ namespace Core
                 SecondName = user.SecondName,
                 Phone = user.Phone
             };
-            _userRepository.SaveOrUpdate(newuser);
+            _userRepository.Save(newuser);
            // Core.MailSender.SendMail(user.Email, "Activate Account", MailBody(user.LoginHash), null);
             return true;
         }
@@ -135,7 +148,7 @@ namespace Core
             var coreUser = new User();
             if (dbUser == null) return coreUser;
             dbUser.Active = true;
-            _userRepository.SaveOrUpdate(dbUser);
+            _userRepository.Update(dbUser);
             coreUser = new User()
             {
                 FirstName = dbUser.FirstName,
@@ -157,19 +170,43 @@ namespace Core
             {
                 FirstName=user.FirstName,
                 SecondName=user.SecondName,
-                Active=user.Active,
-                Email=user.Email,
-                LoginHash=user.LoginHash,
+                Active=true,
                 PasswordHash=user.PasswordHash,
                 Phone=user.Phone,
                 Role=false
             };
             try
             {
-                _userRepository.SaveOrUpdate(newUser);
+                _userRepository.Update(newUser);
                 return true;
             }
             catch (Exception exception)
+            {
+                return false;
+            }
+        }
+
+        public bool UpdatePassword(User user)
+        {
+            using (MD5 md5Hash = MD5.Create())
+            {
+                user.PasswordHash = _hashWorker.GetMd5Hash(md5Hash, user.PasswordHash);
+            }
+            var dbUser = _userRepository.SearchUser(user.Id);
+            if (dbUser.PasswordHash == user.PasswordHash)
+            {
+                dbUser.PasswordHash = user.PasswordHash;
+                try
+                {
+                    _userRepository.Update(dbUser);
+                    return true;
+                }
+                catch (Exception exception)
+                {
+                    return false;
+                }
+            }
+            else
             {
                 return false;
             }

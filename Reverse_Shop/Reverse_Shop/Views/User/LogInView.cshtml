@@ -1,0 +1,24 @@
+﻿@using Reverse_Shop.Models
+@model LogInModel
+<form class="form-2" action="@Url.Action("LogInUser", "User")" method="post">
+    <div onclick=" document.getElementById('login').style.display = 'none'; return false;" onmouseover="    this.style.cursor = 'pointer'" onmouseout="    this.style.cursor = 'default' "><span style="left: 95%;position:absolute">X</span></div>
+
+    <h1><span class="log-in">Log In</span></h1>
+    <p class="float">
+        <i class="icon-user"></i> @Html.LabelFor(l => l.Email)
+        @Html.TextBoxFor(l => l.Email, new {placeholder = "Login or email"})
+    </p>
+    <p class="float">
+        <i class="icon-lock"></i>@Html.LabelFor(l => l.Password)
+        @Html.TextBoxFor(l => l.Password, new {placeholder = "Password"})
+
+    </p>
+    <div>
+        @Html.LabelFor(l => l.Active)
+        @Html.CheckBoxFor(l => l.Active)
+    </div>
+    <p class="clearfix">
+        <input type="submit" name="submit" value="Log In">
+    </p>
+</form>
+
