@@ -1,12 +1,3 @@
-C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Core.dll
-C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Core.pdb
-C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Infrastructure.dll
-C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\EntityFramework.dll
-C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Infrastructure.pdb
-C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\EntityFramework.xml
-C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Release\Core.csprojResolveAssemblyReference.cache
-C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Release\Core.dll
-C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Release\Core.pdb
 E:\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Core.dll
 E:\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Core.pdb
 E:\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Infrastructure.dll
@@ -53,12 +44,15 @@ E:\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\System.Net.Http.Extensions.
 E:\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\System.Net.Http.Primitives.xml
 E:\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Zlib.Portable.xml
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Core.dll.config
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Core.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Core.pdb
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Google.Apis.Auth.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Google.Apis.Auth.PlatformServices.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Google.Apis.Core.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Google.Apis.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Google.Apis.Gmail.v1.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Google.Apis.PlatformServices.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Infrastructure.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\log4net.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Microsoft.Threading.Tasks.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Microsoft.Threading.Tasks.Extensions.Desktop.dll
@@ -67,6 +61,8 @@ C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Rele
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\System.Net.Http.Extensions.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\System.Net.Http.Primitives.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Zlib.Portable.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\EntityFramework.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Infrastructure.pdb
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Google.Apis.pdb
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Google.Apis.xml
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Google.Apis.Auth.pdb
@@ -87,4 +83,8 @@ C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Rele
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\System.Net.Http.Extensions.xml
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\System.Net.Http.Primitives.xml
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\Zlib.Portable.xml
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\bin\Release\EntityFramework.xml
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Release\Core.csproj.App.config
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Release\Core.csprojResolveAssemblyReference.cache
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Release\Core.dll
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Core\obj\Release\Core.pdb
