@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,16 +12,34 @@ namespace Reverse_Shop.Controllers
     public class HomeController : Controller
     {
         private readonly ProductWorker _productWorker = new ProductWorker();
-     //   private Core.ProductControllSystem _productControllSystem = new ProductControllSystem();
         private int _itemInPage = 10;
         public ActionResult Index()
         {
+
+            HttpCookie newCookie = new HttpCookie("login");
+            newCookie.Value = "";
+            newCookie.Expires = DateTime.Now.AddDays(7);
+
             var model = _productWorker.ProductInPage(1, _itemInPage).ToList();
             ViewBag.List = model;
             int count = _productWorker.PageOfProductCount(_itemInPage);
             ViewBag.count = count;
             ViewBag.pageCounter = PageList(1);
             return View(model);
+        }
+
+        public ActionResult FastRegistration(bool mode=false)
+        {
+            if (mode)
+            {
+                
+                return View();
+            }
+            else
+            {
+                return View("Registration");
+            }
+            
         }
 
         public ActionResult Search(string productName)

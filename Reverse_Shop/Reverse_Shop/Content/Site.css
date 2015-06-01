@@ -131,3 +131,19 @@ DIV.jogger SPAN.disabled {
 .productdiv {
     margin: 5%;
 }
+
+.noregdiv {
+    align-content: center;
+    width: 80%;
+    background: #3b679e; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #3b679e 0%, #1a97a8 41%, #2bc6db 58%, #7db9e8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#3b679e), color-stop(41%,#1a97a8), color-stop(58%,#2bc6db), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(45deg,  #3b679e 0%,#1a97a8 41%,#2bc6db 58%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(45deg,  #3b679e 0%,#1a97a8 41%,#2bc6db 58%,#7db9e8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(45deg,  #3b679e 0%,#1a97a8 41%,#2bc6db 58%,#7db9e8 100%); /* IE10+ */
+background: linear-gradient(45deg,  #3b679e 0%,#1a97a8 41%,#2bc6db 58%,#7db9e8 100%); /* W3C */
+    -webkit-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=1 );
+    -moz-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=1 );
+    -o-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=1 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}

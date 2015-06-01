@@ -92,9 +92,17 @@ namespace Core
             {
                 loginHash = _hashWorker.GetMd5Hash(md5Hash, email);
             }
-            var user = new Infrastructure.Model.User { Email = email, Active = false, LoginHash = loginHash };
+            var user = new Infrastructure.Model.User { Email = email, 
+                Active = false,
+                LoginHash = loginHash,
+                Password="",
+                PasswordHash="",
+                Account="base",
+                FirstName="",
+                SecondName="",
+                Phone=0 };
             _userRepository.SaveOrUpdate(user);
-            Core.MailSender.SendMail(user.Email,"Activate Account",MailBody(user.LoginHash),null);
+            //Core.MailSender.SendMail(user.Email,"Activate Account",MailBody(user.LoginHash),null);
             return true;
         }
 
@@ -107,21 +115,23 @@ namespace Core
             }
             var newuser = new Infrastructure.Model.User
             {
-                Email = user.Email,
                 Active = false,
                 LoginHash = loginHash,
+                Password = "",
+                PasswordHash = "",
+                Account = "base",
                 FirstName = user.FirstName,
                 SecondName = user.SecondName,
                 Phone = user.Phone
             };
             _userRepository.SaveOrUpdate(newuser);
-            Core.MailSender.SendMail(user.Email, "Activate Account", MailBody(user.LoginHash), null);
+           // Core.MailSender.SendMail(user.Email, "Activate Account", MailBody(user.LoginHash), null);
             return true;
         }
 
         public User ActivateAccount(string loginHash)
         {
-            var dbUser = _userRepository.Users().FirstOrDefault(u => u.LoginHash == loginHash);
+            var dbUser = _userRepository.Users().FirstOrDefault(u => u.LoginHash.Trim(' ') == loginHash);
             var coreUser = new User();
             if (dbUser == null) return coreUser;
             dbUser.Active = true;
@@ -139,6 +149,10 @@ namespace Core
 
         public bool UpdateUserInfo(User user)
         {
+            using (MD5 md5Hash = MD5.Create())
+            {
+                user.PasswordHash = _hashWorker.GetMd5Hash(md5Hash, user.PasswordHash);
+            }
             var newUser = new Infrastructure.Model.User
             {
                 FirstName=user.FirstName,

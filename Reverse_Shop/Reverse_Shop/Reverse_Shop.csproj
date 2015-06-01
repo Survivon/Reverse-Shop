@@ -172,6 +172,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,6 +181,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PartRegistrationModel.cs" />
+    <Compile Include="Models\PasswordModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -257,6 +259,10 @@
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\Page.cshtml" />
     <Content Include="Views\Product\Info.cshtml" />
+    <Content Include="Views\Home\FastRegistration.cshtml" />
+    <Content Include="Views\Home\Registration.cshtml" />
+    <Content Include="Views\User\Mail.cshtml" />
+    <Content Include="Views\User\Active.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

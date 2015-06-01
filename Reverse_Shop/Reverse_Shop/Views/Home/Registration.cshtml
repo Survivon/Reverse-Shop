@@ -1,0 +1,29 @@
+﻿@using Reverse_Shop.Models;
+@model FullRegistrationModel
+@{
+    ViewBag.Title = "Registration";
+}
+
+<h2>Registration</h2>
+
+<form action="@Url.Action("FullRegistration","User")" method="post">
+<fieldset>
+    <div>
+        @Html.LabelFor(u => u.FirstName)
+        @Html.TextBoxFor(u => u.FirstName)
+    </div>
+    <div>
+        @Html.LabelFor(u => u.SecondName)
+        @Html.TextBoxFor(u => u.SecondName)
+    </div>
+    <div>
+        @Html.LabelFor(u => u.Phone)
+        @Html.TextBoxFor(u => u.Phone)
+    </div>
+    <div>
+        @Html.LabelFor(u => u.Email)
+        @Html.TextBoxFor(u => u.Email)
+    </div>
+    <input type="submit" value="Registration"/>
+</fieldset>
+    </form>

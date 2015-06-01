@@ -20,7 +20,7 @@ namespace Infrastructure.Model
 
         public string Password { get; set; }
 
-        public bool Role { get; set; }
+        public bool? Role { get; set; }
 
         public string Account { get; set; }
 
@@ -31,8 +31,6 @@ namespace Infrastructure.Model
         public string LoginHash { get; set; }
 
         public string PasswordHash { get; set; }
-
-        public virtual IEnumerable<Product> Products { get; set; }
 
     }
 }

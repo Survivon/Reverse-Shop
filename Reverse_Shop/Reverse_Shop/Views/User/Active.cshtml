@@ -1,0 +1,16 @@
+﻿@using Core.Model;
+@model User
+@{
+    ViewBag.Title = "Active";
+}
+
+<h1>You active account!</h1>
+<h3>Please Enter your password!</h3>
+
+<form action="@Url.Action("Save", "User")" method="POST">
+    <fieldset>
+        <div>
+            @Html.LabelFor(u=>u.PasswordHash)
+        </div>
+    </fieldset>
+</form>

@@ -10,7 +10,7 @@ namespace Infrastructure.Classes
 {
     public class UserRepository:IUserRepository
     {
-        private ReverseShopContext _dbContext = new ReverseShopContext();
+        private readonly ReverseShopContext _dbContext = new ReverseShopContext();
         public void SaveOrUpdate(User user) 
         {
             _dbContext.Users.Add(user);

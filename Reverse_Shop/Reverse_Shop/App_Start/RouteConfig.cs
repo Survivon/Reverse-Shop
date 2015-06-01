@@ -13,10 +13,18 @@ namespace Reverse_Shop
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(
+                name: "Active",
+                url: "Active/{login}",
+                defaults: new { controller = "User", action = "Index", id = UrlParameter.Optional }
+            );
+
             routes.MapRoute(null,
                 "{name}",
                 new {controller = "Product", action = "Info", page = 1}
                 );
+
+            
 
             routes.MapRoute(
                 name: "Default",
