@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 using Infrastructure;
 using Infrastructure.Interface;
 using Core.Model;
+using Infrastructure.Classes;
+using User = Infrastructure.Model.User;
 
 namespace Core
 {
     public class ProductWorker
     {
         private readonly IProductRepository _irepository = new ProductRepository();
-        private readonly UserWorker _userWorker = new UserWorker();
+        private readonly IUserRepository _iUserRepository = new UserRepository();
 
         #region ShowInfo
 
@@ -131,12 +133,18 @@ namespace Core
             return productList.Count > 0 ? productList : null;
         }
 
-        //public List<Product> UsersProductsList(string loginHash)
-        //{
-        //    int userId = _userWorker.UserInfo(loginHash).Id;
-        //    var productList = _irepository.Products().Where(p => p.IdBuyer == userId).ToList();
-        //    return productList.Select(item => new Product(item.Id, item.Name, item.Info, item.Image, item.Coast, TimeValueProduct(item.Id), item.Category, item.IdBuyer)).ToList();
-        //}
+        public List<Product> UsersProductsList(string loginHash)
+        {
+            var firstOrDefault = _iUserRepository.Users().FirstOrDefault(u => u.LoginHash == loginHash);
+            if (firstOrDefault == null)
+            {
+                return new List<Product>();
+            }
+            int userId = firstOrDefault.Id;
+            var productList = _irepository.Products().Where(p => p.IdBuyer == userId).ToList();
+            return productList.Select(item => new Product(item.Id, item.Name, item.Info, item.Image, item.Coast, TimeValueProduct(item.Id), item.Category, item.IdBuyer)).ToList();
+            
+        }
 
         //public List<Product> UsersSaleProductsList(string loginHash)
         //{

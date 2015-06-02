@@ -8,6 +8,8 @@
         <th>Info</th>
         <th>Time to end</th>
         <th>Category</th>
+        <th>View</th>
+        
     </tr><!-- Table Header -->
     @if (Model != null)
     {
@@ -19,6 +21,7 @@
                 <td>@item.Info</td>
                 <td>@item.Time.Hours:@item.Time.Minutes</td>
                 <td>@item.Category</td>
+                <td><a href="../@item.Name">@item.Name</a></td>
             </tr>
             <!-- Table Row -->
         }

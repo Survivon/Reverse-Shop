@@ -53,7 +53,7 @@ namespace Core
                 newUser.Id = userInfo.Id;
                 newUser.LoginHash = userInfo.LoginHash;
                 newUser.Phone = userInfo.Phone;
-                newUser.SecondName = newUser.SecondName;
+                newUser.SecondName = userInfo.SecondName;
             }
             else newUser = null;
             return newUser;

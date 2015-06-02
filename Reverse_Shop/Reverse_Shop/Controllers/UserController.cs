@@ -70,7 +70,7 @@ namespace Reverse_Shop.Controllers
             if (httpCookie != null)
             {
                 var user = _userWorker.UserInfo(httpCookie.Value);
-                ViewBag.Name = user.FirstName + " " + user.SecondName;
+                ViewBag.Name = user.FirstName.Trim(' ') + " " + user.SecondName;
             }
             return View();
         }
@@ -184,7 +184,7 @@ namespace Reverse_Shop.Controllers
             var model = new List<Product>();
             if (httpCookie != null)
             {
-               // model = _productWorker.UsersProductsList(httpCookie.Value);
+               model = _productWorker.UsersProductsList(httpCookie.Value);
             }
             return PartialView(model);
         }

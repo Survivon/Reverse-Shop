@@ -19,7 +19,7 @@ namespace Reverse_Shop
                 defaults: new { controller = "User", action = "Index", id = UrlParameter.Optional }
             );
 
-            routes.MapRoute(null,
+            routes.MapRoute("Product",
                 "{name}",
                 new {controller = "Product", action = "Info", page = 1}
                 );

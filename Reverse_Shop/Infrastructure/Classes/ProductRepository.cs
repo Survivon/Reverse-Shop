@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Infrastructure.Model;
 using Infrastructure.Interface;
+using Infrastructure.Model;
 
-namespace Infrastructure
+namespace Infrastructure.Classes
 {
     public class ProductRepository:IProductRepository
     {
