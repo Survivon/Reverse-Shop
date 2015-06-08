@@ -172,6 +172,14 @@ padding:1px;
 z-index: 10;
 left: 42%;
 }
+
+#edit {
+    position:fixed;
+    display: none;
+z-index: 10;
+left: 42%;
+}
+
 #password {
     position:fixed;
     display: none;

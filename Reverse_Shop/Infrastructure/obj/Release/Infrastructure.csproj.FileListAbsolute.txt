@@ -17,3 +17,4 @@ C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructur
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\bin\Release\EntityFramework.SqlServer.xml
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\obj\Release\Infrastructure.dll
 C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\obj\Release\Infrastructure.pdb
+C:\Users\Дмитрий\Documents\GitHub\Reverse-Shop\Reverse_Shop\Infrastructure\obj\Release\Infrastructure.csprojResolveAssemblyReference.cache

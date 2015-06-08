@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.HtmlControls;
 
 namespace Reverse_Shop.Models
 {
@@ -16,7 +17,7 @@ namespace Reverse_Shop.Models
         [DataType(DataType.MultilineText)]
         public string Info { get; set; }
 
-        public string Image { get; set; }
+        public HtmlInputImage Image { get; set; }
 
         
         public decimal? Coast { get; set; }

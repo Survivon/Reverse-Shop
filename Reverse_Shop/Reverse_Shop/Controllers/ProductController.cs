@@ -4,13 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Core;
+using Core.Model;
+using Core.Classes.Product;
+using Core.Classes.User;
 
 namespace Reverse_Shop.Controllers
 {
     public class ProductController : Controller
     {
-        private static readonly ProductWorker ProductWorker = new ProductWorker();
-        private static readonly UserWorker UserWorker = new UserWorker();
+        private static readonly ProductSaveOrUpdate ProductSaveOrUpdate = new ProductSaveOrUpdate();
+        private static readonly ProductShow ProductShow = new ProductShow();
+        private static readonly UserAccount UserAccount = new UserAccount();
         private int _selectProductId = 0;
         // GET: Product
         public ActionResult Index()
@@ -20,11 +24,11 @@ namespace Reverse_Shop.Controllers
 
         public ActionResult Info(string name)
         {
-            var model = ProductWorker.ProductInfo(name);
+            var model = ProductShow.ProductInfo(name);
             var httpCookie = Request.Cookies["login"];
             if (httpCookie != null)
             {
-                int id = UserWorker.UserInfo(httpCookie.Value).Id;
+                int id = UserAccount.UserInfo(httpCookie.Value).Id;
                 if (model.BuyerId == id)
                 {
                     ViewBag.Check = true;
@@ -42,17 +46,35 @@ namespace Reverse_Shop.Controllers
         [HttpPost]
         public ActionResult NewProductCoast(decimal coast, int productId)
         {
-            if (ProductWorker.ProductCoast(productId, coast))
+            if (ProductSaveOrUpdate.ProductCoast(productId, coast))
             {
                 var httpCookie = Request.Cookies["login"];
                 if (httpCookie != null)
-                    ProductWorker.AddNewBuyer(productId, UserWorker.UserInfo(httpCookie.Value).Id, coast);
+                    ProductSaveOrUpdate.AddNewBuyer(productId, UserAccount.UserInfo(httpCookie.Value).Id, coast);
                 ViewBag.Check = true;
-                return Redirect("/" + ProductWorker.ProductInfo(productId).Name.TrimEnd(' '));
+                return Redirect("/" + ProductShow.ProductInfo(productId).Name.TrimEnd(' '));
 
             }
             ViewBag.Check = false;
-            return Redirect("/" + ProductWorker.ProductInfo(productId).Name.TrimEnd(' '));
+            return Redirect("/" + ProductShow.ProductInfo(productId).Name.TrimEnd(' '));
+        }
+
+        public PartialViewResult EditProductView(string productName)
+        {
+            var model = ProductShow.ProductInfo(productName);
+            return PartialView(model);
+        }
+
+        public ActionResult EditProduct(Product product)
+        {
+            ProductSaveOrUpdate.UpdateProduct(product);
+            return RedirectToAction("UserInfo", "User");
+        }
+
+        public ActionResult DeleteProduct(int productId)
+        {
+            ProductSaveOrUpdate.DeleteProduct(productId);
+            return RedirectToAction("UserInfo", "User");
         }
     }
 }

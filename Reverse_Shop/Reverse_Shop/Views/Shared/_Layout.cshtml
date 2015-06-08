@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title – приложение ASP.NET</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -25,6 +25,11 @@
     <link href="~/Content/demo.css" rel="stylesheet" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="~/Scripts/jquery.hoverdir.js"></script>
+
+    <link href="~/Scripts/uploadify.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/swfobject.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.uploadify.v2.1.4.min.js"></script>
+
     <noscript>
         <style>
             .da-thumbs li a div {
@@ -67,7 +72,7 @@
     @RenderBody()
     <hr/>
     <footer>
-        <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
+        <p>&copy; @DateTime.Now.Year – Reverse Shop</p>
     </footer>
 </div>
 

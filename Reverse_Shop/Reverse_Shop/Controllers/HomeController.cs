@@ -6,12 +6,13 @@ using System.Web;
 using System.Web.Mvc;
 using Core;
 using Core.Model;
+using Core.Classes.Product;
 
 namespace Reverse_Shop.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ProductWorker _productWorker = new ProductWorker();
+        private readonly ProductShow _productWorker = new ProductShow();
         private int _itemInPage = 10;
         public ActionResult Index()
         {

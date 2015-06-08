@@ -1,0 +1,36 @@
+﻿@using Reverse_Shop.Models;
+@model ProductModel
+
+<h1>Create Product</h1>
+<h3>Please, fill this area!</h3>
+<div id="saveProduct">
+    @using (Ajax.BeginForm("ProductSavePartialView",new AjaxOptions
+    {
+        UpdateTargetId = "saveProduct",
+        InsertionMode = InsertionMode.Replace
+    }))
+    {
+        <div>
+            @Html.LabelFor(p => p.Name)
+            @Html.TextBoxFor(p => p.Name)
+        </div>
+
+        <div>
+            @Html.LabelFor(p => p.Info)
+            @Html.TextAreaFor(p => p.Info)
+        </div>
+
+        <div>
+            @Html.LabelFor(p => p.Category)
+            @Html.TextBoxFor(p => p.Category)
+        </div>
+
+        <div>
+            @Html.LabelFor(p => p.Time)
+            @Html.TextBoxFor(p => p.Time) h.
+        </div>
+
+        <input type="submit" value="Save" />
+    }
+</div>
+

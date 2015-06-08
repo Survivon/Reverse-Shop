@@ -17,15 +17,16 @@
            }
 @using (Html.BeginForm("UpdateUser", "User"))
 {
+    <input type="hidden" name="Id" value="@Model.Id"/>
     <div>
         <span>
-            @Html.LabelFor(u => u.FirstName) : @Model.FirstName
+            @Html.LabelFor(u => u.FirstName) 
     </span> 
         @Html.TextBoxFor(u => u.FirstName)
     </div>
     <div>
         <span>
-            @Html.LabelFor(u => u.SecondName) : @Model.SecondName
+            @Html.LabelFor(u => u.SecondName) 
         </span>
         @Html.TextBoxFor(u => u.SecondName)
 </div>
@@ -34,16 +35,10 @@
 </div>
     <div>
         <span>
-            @Html.LabelFor(u => u.Phone) : @Model.Phone
+            @Html.LabelFor(u => u.Phone) 
             </span>
                 @Html.TextBoxFor(u => u.Phone)
 </div>
-    <div>
-        @Html.Label("Change Password")
-        <a href="#" onclick=" document.getElementById('password').style.display = 'block'; return false; ">Change</a>
-        <div id="password">
-            @Html.Action("ChangePasswordView", "User")
-        </div>
-    </div>
+    
     <input type="submit" value="Save"/>
 }

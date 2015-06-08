@@ -38,6 +38,16 @@
         }
         else
         {
+            @Html.LabelFor(p => p.Coast)
+        if (Model.Coast != null)
+         {
+             <h3>None. You will be first!</h3>
+         }
+         else
+         {
+             @Model.Coast
+         }
+
             <div>
                 <h2 style="color: red;">Enter smaller coast!</h2>
             </div>
@@ -46,6 +56,15 @@
     }
     else
     {
+        @Html.LabelFor(p=>p.Coast)
+        if(Model.Coast != null)
+        {
+            <h3>None. You will be first!</h3>
+        }
+        else
+        {
+            @Model.Coast
+        }
         @Html.Action("CoastPartialView", "Product", new { productId = Model.Id })
     }
 </div>

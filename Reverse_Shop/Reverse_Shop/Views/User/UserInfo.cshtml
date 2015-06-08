@@ -27,7 +27,8 @@
         <li class="active"></li>
         <li><a href="#tab1">User's Info</a></li>
         <li><a href="#tab2">Buy List</a></li>
-        <li><a href="#tab3">Sale List </a></li>
+        <li><a href="#tab3">Sale List</a></li>
+        <li><a href="#tab4">Create Product</a></li>
     </ul>
 
     <div class="tab-content">
@@ -40,7 +41,11 @@
         </div>
 
         <div id="tab3" class="tab">
-        3
+            @Html.Action("SaleListPartialView", "User")
+        </div>
+
+        <div id="tab4" class="tab">
+            @Html.Action("CreateProductPartialView", "User")
         </div>
     </div>
 </div>

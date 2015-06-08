@@ -1,0 +1,22 @@
+﻿@using Core.Model;
+@model Product
+
+@using (Html.BeginForm("EditProduct", "Product"))
+{
+    <div onclick=" document.getElementById('edit').style.display = 'none'; return false;" onmouseover="    this.style.cursor = 'pointer'" onmouseout="    this.style.cursor = 'default' "><span style="left: 95%;position:absolute">X</span></div>
+    <input type="hidden" name="Id" value="@Model.Id"/>
+    <div>
+        <h2>@Model.Name</h2>
+    </div>
+    <div>
+        @Html.LabelFor(p => p.Info)
+        @Html.TextAreaFor(p => p.Info)
+    </div>
+    <div>
+        @Html.LabelFor(p => p.Category)
+        @Html.TextBoxFor(p => p.Category)
+    </div>
+    <input type="submit" value="Edit" />
+}
+
+

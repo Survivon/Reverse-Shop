@@ -207,14 +207,18 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\reverseshop - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\reverseshop - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\reverseshop.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\home.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.hoverdir.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.uploadify.v2.1.4.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -222,6 +226,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\swfobject.js" />
+    <Content Include="Scripts\uploadify.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -271,6 +277,10 @@
     <Content Include="Views\User\UserInformation.cshtml" />
     <Content Include="Views\User\ChangePasswordView.cshtml" />
     <Content Include="Views\User\BuyListPartialView.cshtml" />
+    <Content Include="Views\User\SaleListPartialView.cshtml" />
+    <Content Include="Views\Product\EditProductView.cshtml" />
+    <Content Include="Views\User\CreateProductPartialView.cshtml" />
+    <Content Include="Views\User\ProductSavePartialView.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
