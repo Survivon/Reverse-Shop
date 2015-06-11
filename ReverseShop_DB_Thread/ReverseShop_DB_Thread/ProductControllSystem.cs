@@ -67,5 +67,7 @@ namespace ReverseShop_DB_Thread
                           "<p>Product coast = " + product.Coast + "</p>";
            return mailBody;
        }
-    }
+
+       
+   }
 }

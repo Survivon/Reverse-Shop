@@ -16,11 +16,6 @@ namespace Reverse_Shop.Controllers
         private int _itemInPage = 10;
         public ActionResult Index()
         {
-
-            HttpCookie newCookie = new HttpCookie("login");
-            newCookie.Value = "7b605a2452612c87d6820fa24f5c82ed";
-            newCookie.Expires = DateTime.Now.AddDays(7);
-            Response.Cookies.Add(newCookie);
             var model = _productWorker.ProductInPage(1, _itemInPage).ToList();
             ViewBag.List = model;
             int count = _productWorker.PageOfProductCount(_itemInPage);
@@ -29,18 +24,9 @@ namespace Reverse_Shop.Controllers
             return View(model);
         }
 
-        public ActionResult FastRegistration(bool mode=false)
+        public ActionResult FastRegistration(bool mode = false)
         {
-            if (mode)
-            {
-                
-                return View();
-            }
-            else
-            {
-                return View("Registration");
-            }
-            
+            return View("Registration");
         }
 
         public ActionResult Search(string productName)

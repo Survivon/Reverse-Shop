@@ -10,27 +10,25 @@
         InsertionMode = InsertionMode.Replace
     }))
     {
-        <div>
-            @Html.LabelFor(p => p.Name)
-            @Html.TextBoxFor(p => p.Name)
-        </div>
-
-        <div>
-            @Html.LabelFor(p => p.Info)
-            @Html.TextAreaFor(p => p.Info)
-        </div>
-
-        <div>
-            @Html.LabelFor(p => p.Category)
-            @Html.TextBoxFor(p => p.Category)
-        </div>
-
-        <div>
-            @Html.LabelFor(p => p.Time)
-            @Html.TextBoxFor(p => p.Time) h.
-        </div>
-
-        <input type="submit" value="Save" />
+        <table>
+            <tr>
+                <td>@Html.LabelFor(p => p.Name)</td>
+                <td>@Html.TextBoxFor(p => p.Name, new { @class = "text" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(p => p.Info)</td>
+                <td>@Html.TextAreaFor(p => p.Info, new { @class = "textarea" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(p => p.Category)</td>
+                <td>@Html.TextBoxFor(p => p.Category, new { @class = "text" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(p => p.Time)</td>
+                <td>@Html.TextBoxFor(p => p.Time, new { @class = "text" }) h.</td>
+            </tr>
+        </table>
+    <input type="submit" value="Save" class="submit" />
     }
 </div>
 

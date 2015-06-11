@@ -29,23 +29,40 @@ namespace Reverse_Shop.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult FastRegistration(PartRegistrationModel model)
-        {
-            bool registrationSeccess = _userRegistration.RegistrationAccount(model.Email);
-            return View("../User/Mail");
-        }
 
         [HttpPost]
         public ActionResult FullRegistration(FullRegistrationModel model)
         {
-            Core.Model.User createUser = new User();
-            createUser.Email = model.Email;
-            createUser.FirstName = model.FirstName;
-            createUser.SecondName = model.SecondName;
-            createUser.Phone = model.Phone;
+            Core.Model.User createUser = new User
+            {
+                Email = model.Email,
+                FirstName = model.FirstName,
+                SecondName = model.SecondName,
+                Phone = model.Phone,
+                PasswordHash = model.Password
+            };
             bool registrationSuccess = _userRegistration.RegistrationAccount(createUser);
-            return View("../User/Mail");
+            if (registrationSuccess)
+            {
+                var httpCookie = Request.Cookies["login"];
+                if (httpCookie == null)
+                {
+                    HttpCookie newCookie = new HttpCookie("login");
+                    newCookie.Value = _userRegistration.AutorizationUser(model.Email).LoginHash;
+                    newCookie.Expires = DateTime.Now.AddDays(7d);
+                    Request.Cookies.Add(newCookie);
+                    var cookie = new HttpCookie("login")
+                    {
+                        Value = _userRegistration.AutorizationUser(model.Email).LoginHash,
+                        Expires = DateTime.Now.AddMinutes(10),
+                    };
+                    Response.SetCookie(cookie);
+                    Response.Cookies["login"].Value = _userRegistration.AutorizationUser(model.Email).LoginHash;
+                    Response.Cookies["login"].Expires = DateTime.Now.AddDays(7d);
+                   
+                }
+            }
+            return RedirectToAction("Index","Home");
         }
 
         public ActionResult Active(string login)
@@ -84,9 +101,10 @@ namespace Reverse_Shop.Controllers
 
         public ActionResult UserExit()
         {
-            var httpCookie = Request.Cookies["login"];
-            if (httpCookie != null) httpCookie.Value = null;
-            return View("../Home/Index");
+            HttpCookie myCookie = new HttpCookie("login");
+            myCookie.Expires = DateTime.Now.AddDays(-1d);
+            Response.Cookies.Add(myCookie);
+            return RedirectToAction("Index","Home");
         }
 
         public PartialViewResult LogInView()
@@ -104,7 +122,16 @@ namespace Reverse_Shop.Controllers
                     {
                         HttpCookie newCookie = new HttpCookie("login");
                         newCookie.Value = _userRegistration.AutorizationUser(login.Email).LoginHash;
-                        newCookie.Expires = DateTime.Now.AddDays(7);
+                        newCookie.Expires = DateTime.Now.AddDays(7d);
+                        Request.Cookies.Add(newCookie);
+                        var cookie = new HttpCookie("login")
+                        {
+                            Value = _userRegistration.AutorizationUser(login.Email).LoginHash,
+                            Expires = DateTime.Now.AddMinutes(10),
+                        };
+                        Response.SetCookie(cookie);
+                        Response.Cookies["login"].Value = _userRegistration.AutorizationUser(login.Email).LoginHash;
+                        Response.Cookies["login"].Expires = DateTime.Now.AddDays(7d);
                         return RedirectToAction("Index", "Home");
                     }
                     else
@@ -125,11 +152,30 @@ namespace Reverse_Shop.Controllers
                 {
                     HttpCookie newCookie = new HttpCookie("login");
                     newCookie.Value = _userRegistration.AutorizationUser(login.Email).LoginHash;
-                    newCookie.Expires = DateTime.Now.AddHours(1);
+                    newCookie.Expires = DateTime.Now.AddDays(7d);
+                    Request.Cookies.Add(newCookie);
+                    var cookie = new HttpCookie("login")
+                    {
+                        Value = _userRegistration.AutorizationUser(login.Email).LoginHash,
+                        Expires = DateTime.Now.AddMinutes(10),
+                    };
+                    Response.SetCookie(cookie);
+                    Response.Cookies["login"].Value = _userRegistration.AutorizationUser(login.Email).LoginHash;
+                    Response.Cookies["login"].Expires = DateTime.Now.AddDays(1d);
                     return RedirectToAction("Index", "Home");
                 }
                 else
                 {
+                    HttpCookie newCookie = new HttpCookie("login");
+                    newCookie.Value = _userRegistration.AutorizationUser(login.Email).LoginHash;
+                    newCookie.Expires = DateTime.Now.AddDays(7d);
+                    Request.Cookies.Add(newCookie);
+                    var cookie = new HttpCookie("login")
+                    {
+                        Value = _userRegistration.AutorizationUser(login.Email).LoginHash,
+                        Expires = DateTime.Now.AddMinutes(10),
+                    };
+                    Response.SetCookie(cookie);
                     Request.Cookies["login"].Value = _userRegistration.AutorizationUser(login.Email).LoginHash;
                     Request.Cookies["login"].Expires = DateTime.Now.AddHours(1);
                     return RedirectToAction("Index", "Home");
@@ -167,21 +213,20 @@ namespace Reverse_Shop.Controllers
         {
             return PartialView();
         }
-
-        public PartialViewResult ChangePassword(PasswordModel password)
+        [HttpPost]
+        public ActionResult ChangePassword(PasswordModel password)
         {
             var httpCookie = Request.Cookies["login"];
             if (httpCookie != null)
             {
                 var user = _userAccount.UserInfo(httpCookie.Value);
-                user.PasswordHash = password.Password;
-                if (_userAccount.UpdatePassword(user))
+                if (_userAccount.CheckOldPassword(user.LoginHash, password.OldPassword))
                 {
-                    ViewBag.Check = true;
+                    user.PasswordHash = password.Password;
+                    ViewBag.Check = _userAccount.UpdatePassword(user);
                 }
-                else ViewBag.Check = false;
             }
-            return ChangePasswordView();
+            return RedirectToAction("UserInfo","User");
         }
 
 

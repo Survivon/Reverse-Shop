@@ -10,6 +10,12 @@ namespace Reverse_Shop.Models
     {
         [Required]
         [DataType(DataType.Password)]
+        [Display(Name = "Old password")]
+        public string OldPassword { get; set; }
+
+        [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "New password")]
         public string Password { get; set; }
 
         [Required]

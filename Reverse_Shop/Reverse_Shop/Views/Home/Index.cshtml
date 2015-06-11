@@ -19,10 +19,9 @@
 @if (Request.Cookies["login"] == null)
 {
     <div class="noregdiv">
-        <h1>You don't regestretion in Reverse Shop!</h1>
-        <h2>Would you want to registrarion there&</h2>
-        <span>@Html.ActionLink("Fast Registration","FastRegistration", true)</span>
-        <span>@Html.ActionLink("Registration", "FastRegistration", false)</span>
+        <h1>You are not logged in Reverse Shop!</h1>
+        <h2>Would you want to registrarion there?</h2>
+        <span>@Html.ActionLink("Registration", "FastRegistration", false,new{@class="one"})</span>
 </div>
 }
 

@@ -1,6 +1,32 @@
 ﻿@using (Html.BeginForm("UploadFile", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <input type="hidden" value="@ViewBag.ProductId" name="productName" />
-    <input type="file" name="file" />
-    <input type="submit" value="OK" />
+    <div class="fileload">
+        <h2>Dowload image:</h2>
+        <div class="file-load-block">
+            <input type="file" name="file" id="file" />
+            <div class="fileLoad">
+                <input type="text" value="Select file" />
+                <button>Select file</button>
+            </div>
+        </div>
+    </div>
+    <input type="submit" value="OK" class="submit" />
 }
+<script>
+    // = Load
+    // отслеживаем изменение инпута file
+    $('#file').change(function () {
+        // Если файл прикрепили то заносим значение value в переменную
+        var fileResult = $(this).val();
+        // И дальше передаем значение в инпут который под загрузчиком
+        $(this).parent().find('.fileLoad').find('input').val(fileResult);
+    });
+
+    /* Добавляем новый класс кнопке если инпут файл получил фокус */
+    $('#file').hover(function () {
+        $(this).parent().find('button').addClass('button-hover');
+    }, function () {
+        $(this).parent().find('button').removeClass('button-hover');
+    });
+</script>

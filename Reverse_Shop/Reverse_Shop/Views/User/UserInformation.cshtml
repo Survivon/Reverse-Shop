@@ -18,27 +18,30 @@
 @using (Html.BeginForm("UpdateUser", "User"))
 {
     <input type="hidden" name="Id" value="@Model.Id"/>
-    <div>
-        <span>
-            @Html.LabelFor(u => u.FirstName) 
-    </span> 
-        @Html.TextBoxFor(u => u.FirstName)
-    </div>
-    <div>
-        <span>
-            @Html.LabelFor(u => u.SecondName) 
-        </span>
-        @Html.TextBoxFor(u => u.SecondName)
-</div>
-    <div>
-        <span>Email : </span><span>@Model.Email </span>
-</div>
-    <div>
-        <span>
-            @Html.LabelFor(u => u.Phone) 
-            </span>
-                @Html.TextBoxFor(u => u.Phone)
-</div>
-    
-    <input type="submit" value="Save"/>
+    <table>
+        <tr>
+            <td>@Html.LabelFor(u => u.FirstName) </td>
+            <td>@Html.TextBoxFor(u => u.FirstName, new { @class = "text" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(u => u.SecondName) </td>
+            <td>@Html.TextBoxFor(u => u.SecondName, new { @class = "text" })</td>
+        </tr>
+        <tr>
+            <td>Email : </td>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <td><a href="#" onclick=" document.getElementById('password').style.display = 'block'; return false; "><b>Change Password</b></a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(u => u.Phone) </td>
+            <td>@Html.TextBoxFor(u => u.Phone, new { @class = "text" })</td>
+        </tr>
+    </table>
+    <input type="submit" value="Save" class="submit"/>
 }
+<div id="password">
+    @Html.Action("ChangePasswordView", "User")
+</div>

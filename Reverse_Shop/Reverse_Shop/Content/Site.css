@@ -132,9 +132,17 @@ DIV.jogger SPAN.disabled {
     margin: 5%;
 }
 
+a.one:link {color:#ff0000;
+            font-size: 20px;
+}
+a.one:visited {color:#0000ff;
+    font-size: 20px;
+}
+a.one:hover {color:#ffcc00;font-size: 20px;}
+
 .noregdiv {
     align-content: center;
-    width: 80%;
+    width: 100%;
     background: #3b679e; /* Old browsers */
 background: -moz-linear-gradient(45deg,  #3b679e 0%, #1a97a8 41%, #2bc6db 58%, #7db9e8 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#3b679e), color-stop(41%,#1a97a8), color-stop(58%,#2bc6db), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
@@ -174,23 +182,45 @@ left: 42%;
 }
 
 #edit {
-    position:fixed;
-    display: none;
-z-index: 10;
-left: 42%;
+    position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 10;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+    -ms-transition: opacity 400ms ease-in;
+    -o-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+	display: none;
+}
+#edit:target {
+	display: block;
+	pointer-events: auto;
 }
 
 #password {
-    position:fixed;
-    display: none;
-z-index: 10;
-left: 42%;
-    -ms-border-radius: 5px;
-    border-radius: 5px;
-    background-color: #2bc6db;
-    border: 1px;
-    padding: 5px;
-    border-color: #2b8bc7;
+   position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 10;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+    -ms-transition: opacity 400ms ease-in;
+    -o-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+	display: none;
+}
+#password:target {
+	display: block;
+	pointer-events: auto;
 }
 
 .form-2 {
@@ -374,6 +404,7 @@ left: 42%;
 
 .tabs {
     width:100%;
+    margin: 0 auto;
     display:inline-block;
 }
  
@@ -384,10 +415,11 @@ left: 42%;
         clear:both;
         content:'';
         border: 0px;
+        outline:none;
     }
  
     .tab-links li {
-        margin:0px 5px;
+        margin:0px;
         float:left;
         list-style:none;
         border: 0px;
@@ -408,12 +440,14 @@ left: 42%;
             -o-transition:all linear 0.15s;
             transition:all linear 0.15s;
             border: 0px;
+            outline:none;
         }
 
 .tab-links a:hover {
             background:#a7cce5;
             text-decoration:none;
             border: 0px;
+            outline:none;
         }
  
     li.active a, li.active a:hover {
@@ -538,4 +572,174 @@ left: 42%;
 .simple-little-table a:hover {
 	color: #bd5a35;
 	text-decoration:underline;
+}
+
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	display: none;
+	pointer-events: none;
+}
+
+
+
+#edit > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+#password > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #00d9ff; }
+
+
+
+/*INPUT*/
+.text {
+	width: 300px;
+	font-size: 13px;
+	padding: 6px 0 4px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+	border-radius: 8px;
+}
+
+
+.textarea {
+	/* = Убираем скролл */
+	overflow: auto;
+
+	/* = Убираем увеличение */
+	resize: none;
+	width: 300px;
+	height: 50px;
+
+	/* = Добавим фон, рамку, отступ*/
+	background: #f6f6f6;
+	border: 1px solid #cecece;
+	border-radius: 8px 0 0 0;
+	padding: 8px 0 8px 10px;
+}
+.texta:focus {
+    outline:none;
+}
+
+input:focus{outline:none;}
+
+
+.submit {
+	cursor: pointer;
+	border: 1px solid #cecece;
+	background: #f6f6f6;
+	box-shadow: inset 0px 20px 20px #ffffff;
+	border-radius: 8px;
+	padding: 8px 14px;
+	width: 120px;
+}
+.submit:hover {
+	box-shadow: inset 0px -20px 20px #ffffff;
+}
+.submit:active {
+	margin-top: 1px;
+	margin-bottom: -1px;
+	zoom: 1;
+}
+
+/*	=	File Load */
+/* Стили для контейнера */
+.file-load-block {
+	width: 310px;
+	height: 35px;
+	overflow: hidden;
+	position: relative;
+}
+/* работаем с инпутом который конкретно file */
+.file-load-block input[type=file] {
+	/* делаем кроссбраузерную прозрачность */
+	opacity: 0;
+	filter: alpha(opacity=0);
+
+	/* Позиционируем абсолютно отсносительно контейнера по правому краю */
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	/*
+	Задаем высоту и делаем шрифт огромным
+	для того чтобы кнопка "обзор" занимала все пространство контейнера
+	*/
+	height: 35px;
+	font-size: 600px;
+
+	/* Ставим наш инпут поверх всего содержимого */
+	z-index: 2;
+	cursor: pointer;
+	width: auto;
+}
+/* Стилизируем инпут и кнопку которые под загрузчиком */
+.file-load-block input[type=text] {
+	z-index: 1;
+	width: 190px;
+	padding-right: 10px;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+}
+.file-load-block button {
+	position: absolute;
+	right: 0;
+	top: 2px;
+	width: 90px;
+	height: 28px;
+	border: 1px solid #ccc;
+	background: #fff;
+	color: #666;
+	border-radius: 5px;
+	box-shadow: inset 0 2px 2px #ccc;
+}
+.file-load-block .button-hover {
+	box-shadow: 0 0 2px #ccc;
 }

@@ -20,51 +20,54 @@
             </td>
             <td id="info">
                 <h1>@Model.Name</h1>
+                <div>
+                    <h2>Info</h2>
+                    <p>@Model.Info</p>
+                </div>
+                <div>
+                    <span><b>Time to end auction!</b></span>
+                    <span>@Model.Time.Hours h. @Model.Time.Minutes m.</span>
+                </div>
+                @if (ViewBag.Check != null)
+                {
+                    if (ViewBag.Check)
+                    {
+                        <div>
+                            <h3>You bought this goods!</h3>
+                        </div>
+                    }
+                    else
+                    {
+                        <span>@Html.LabelFor(p => p.Coast): </span>
+                        if (Model.Coast == null)
+                        {
+                            <span>None. You will be first!</span>
+                        }
+                        else
+                        {
+                            <span>@Model.Coast</span>
+                        }
 
+                        <div>
+                            <h2 style="color: red;">Enter smaller coast!</h2>
+                        </div>
+                        @Html.Action("CoastPartialView", "Product", new { productId = Model.Id })
+                    }
+                }
+                else
+                {
+                    <span>@Html.LabelFor(p => p.Coast): </span>
+                    if (Model.Coast == null)
+                    {
+                        <span>None. You will be first!</span>
+                    }
+                    else
+                    {
+                        <span>@Model.Coast</span>
+                    }
+                    @Html.Action("CoastPartialView", "Product", new { productId = Model.Id })
+                }
             </td>
         </tr>
     </table>
-    <div>
-        <h2>Info</h2>
-        <p>@Model.Info</p>
-    </div>
-    @if (ViewBag.Check != null)
-    {
-        if (ViewBag.Check)
-        {
-            <div>
-                <h3>You bought this goods!</h3>
-            </div>
-        }
-        else
-        {
-            @Html.LabelFor(p => p.Coast)
-        if (Model.Coast != null)
-         {
-             <h3>None. You will be first!</h3>
-         }
-         else
-         {
-             @Model.Coast
-         }
-
-            <div>
-                <h2 style="color: red;">Enter smaller coast!</h2>
-            </div>
-            @Html.Action("CoastPartialView", "Product", new {productId = Model.Id})
-        }
-    }
-    else
-    {
-        @Html.LabelFor(p=>p.Coast)
-        if(Model.Coast != null)
-        {
-            <h3>None. You will be first!</h3>
-        }
-        else
-        {
-            @Model.Coast
-        }
-        @Html.Action("CoastPartialView", "Product", new { productId = Model.Id })
-    }
 </div>

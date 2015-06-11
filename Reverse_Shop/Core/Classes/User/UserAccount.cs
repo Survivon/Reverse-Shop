@@ -126,5 +126,14 @@ namespace Core.Classes.User
                 return false;
             }
         }
+
+        public bool CheckOldPassword(string loginHash, string passwordOld)
+        {
+            var user = _userRepository.Users().FirstOrDefault(u => u.LoginHash == loginHash);
+            using (MD5 md5Hash = MD5.Create())
+            {
+                return user != null && _hashWorker.GetMd5Hash(md5Hash, passwordOld)==user.PasswordHash;
+            }
+        }
     }
 }

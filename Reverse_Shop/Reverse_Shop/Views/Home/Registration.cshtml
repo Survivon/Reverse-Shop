@@ -6,24 +6,33 @@
 
 <h2>Registration</h2>
 
-<form action="@Url.Action("FullRegistration","User")" method="post">
-<fieldset>
-    <div>
-        @Html.LabelFor(u => u.FirstName)
-        @Html.TextBoxFor(u => u.FirstName)
-    </div>
-    <div>
-        @Html.LabelFor(u => u.SecondName)
-        @Html.TextBoxFor(u => u.SecondName)
-    </div>
-    <div>
-        @Html.LabelFor(u => u.Phone)
-        @Html.TextBoxFor(u => u.Phone)
-    </div>
-    <div>
-        @Html.LabelFor(u => u.Email)
-        @Html.TextBoxFor(u => u.Email)
-    </div>
-    <input type="submit" value="Registration"/>
-</fieldset>
-    </form>
+<form action="@Url.Action("FullRegistration", "User")" method="post">
+    <table>
+        <tr>
+            <td>@Html.LabelFor(u => u.FirstName)</td>
+            <td>@Html.TextBoxFor(u => u.FirstName,new{@class="text"})</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(u => u.SecondName)</td>
+            <td>@Html.TextBoxFor(u => u.SecondName, new { @class = "text" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(u => u.Phone)</td>
+            <td>@Html.TextBoxFor(u => u.Phone, new { @class = "text" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(u => u.Email)</td>
+            <td>@Html.TextBoxFor(u => u.Email, new { @class = "text" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(u => u.Password)</td>
+            <td>@Html.TextBoxFor(u => u.Password, new { placeholder = "Password", type = "password",@class="text" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(u => u.ConfirmPassword)</td>
+            <td>@Html.TextBoxFor(u => u.ConfirmPassword, new { placeholder = "Confirm password", type = "password",@class="text" })</td>
+        </tr>
+    </table>
+        <input type="submit" value="Registration" class="submit"/>
+    
+</form>
